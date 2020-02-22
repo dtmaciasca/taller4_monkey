@@ -59,7 +59,7 @@ function randomEvent(monkeysLeft) {
       if (body.find(evento).length > 0) {
         cy.get(evento).then($links => {
           var randomLink = $links.get(getRandomInt(0, $links.length));
-          if(!Cypress.dom.isHidden(randomLink) && !Cypress.dom.isDetached(randomLink)) {
+          if(!Cypress.dom.isHidden(randomLink)) {
               doEvent(evento, randomLink);
               monkeysLeft = monkeysLeft - 1;
           }
